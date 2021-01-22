@@ -25,7 +25,7 @@ data "aws_route53_zone" "example" {
 }
 
 module "ses_prod" {
-  source = "./aws-ses"
+  source = "./ses"
 
   domain  = "example.com"
   zone_id = data.aws_route53_zone.example.zone_id

@@ -22,7 +22,7 @@ provider "aws" {
 
 
 module "frontend_prod" {
-  source = "./aws-static-website"
+  source = "./static-website"
 
   route53_hosting_zone = "example.com"
   root_domain_name     = "example.com"

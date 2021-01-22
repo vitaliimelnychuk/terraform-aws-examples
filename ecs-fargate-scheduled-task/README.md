@@ -44,7 +44,7 @@ provider "aws" {
 
 
 module "scheduled_task" {
-  source                      = "./aws-ecs-fargate-scheduled-task"
+  source                      = "./ecs-fargate-scheduled-task"
   name_prefix                 = "role-prefix-name"
   ecs_execution_task_role_arn = "your-task-execution=arn" // the one you have in task definition
 }

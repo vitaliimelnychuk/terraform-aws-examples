@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 module "api_prod" {
-  source               = "./aws-ecs-service
+  source               = "./ecs-service
   env                  = "production"
   route53_hosting_zone = "example.com"
   root_domain_name     = "api.example.com"
