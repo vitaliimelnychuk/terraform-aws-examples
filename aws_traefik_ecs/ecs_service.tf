@@ -14,13 +14,13 @@ resource "aws_ecs_service" "traefik" {
 
   load_balancer {
     target_group_arn = aws_alb_target_group.traefik_api.arn
-    container_name   = "traefik"
+    container_name   = "${var.env}-${var.resources_prefix}-traefik"
     container_port   = 8080
   }
 
   load_balancer {
     target_group_arn = aws_alb_target_group.traefik.arn
-    container_name   = "traefik"
+    container_name   = "${var.env}-${var.resources_prefix}-traefik"
     container_port   = 80
   }
 

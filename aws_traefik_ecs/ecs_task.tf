@@ -1,8 +1,9 @@
 data "aws_region" "current" {}
 
 resource "aws_ecs_task_definition" "traefik" {
-  family = "traefik"
+  family = "${var.env}-${var.resources_prefix}-traefik"
   container_definitions = templatefile("${path.module}/task-definitions/traefik.json.tpl", {
+    name             = "${var.env}-${var.resources_prefix}-traefik"
     aws_access_key   = var.traefik_access_key
     loggroup         = aws_cloudwatch_log_group.traefik.name
     region           = data.aws_region.current.name

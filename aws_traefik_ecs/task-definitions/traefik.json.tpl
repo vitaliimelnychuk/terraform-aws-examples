@@ -1,6 +1,6 @@
 [
     {
-      "name": "traefik",
+      "name": "${name}",
       "image": "traefik:v2.3.0-rc2",
       "entryPoint": ["traefik", "--providers.ecs.clusters", "${ecs_cluster_name}", "--log.level", "DEBUG", "--providers.ecs.region", "${region}", "--api.insecure"],
       "essential": true,
@@ -9,7 +9,7 @@
         "options": {
             "awslogs-group": "${loggroup}",
             "awslogs-region": "${region}",
-            "awslogs-stream-prefix": "traefik"
+            "awslogs-stream-prefix": "${name}"
         }
       },
       "Environment" : [{
